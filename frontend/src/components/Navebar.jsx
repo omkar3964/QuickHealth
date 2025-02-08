@@ -36,7 +36,7 @@ const Navebar = () => {
           <li className='py-1'>CONTACT</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden' />
         </NavLink>
-        <a className='border rounded-full px-1 py-0' href="https://weather-app-1szm.onrender.com">Admin panel</a>
+        <a className='border rounded-full px-1 py-0' href="https://quickhealth-admin-l0ij.onrender.com">Admin panel</a>
       </ul>
       <div className='flex items-center gap-4'>
         {
