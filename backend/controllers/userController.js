@@ -128,7 +128,7 @@ const bookAppointment = async (req, res) => {
         }
         const userData = await userModel.findById(userId).select('-password')
         delete docData.slots_booked
-        console.log(meetingCode)
+        console.log(meetingCode, 'hiiii')
         const appointmentData = {
             userId,
             docId,
