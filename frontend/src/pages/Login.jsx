@@ -72,6 +72,8 @@ const Login = () => {
           setToken(data.token)
         } else {
           toast.error(data.message)
+          console.log(data.message);
+          
         }
 
       } else {

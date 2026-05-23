@@ -2,7 +2,7 @@
 
 QuickHealth is a full-stack doctor appointment and online consultation platform built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows patients to register, browse doctors, book appointments, pay online, and even consult via secure video calls.
 
-## 🌟 Features
+## 🌟 Features:
 
 - 🧑‍⚕️ Doctor and patient login/signup
 - 🔍 Search doctors by specialization/location
