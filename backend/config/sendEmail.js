@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 export const sendEmail = async (to, subject, html, attachments = []) => {
   try {
     await transporter.sendMail({
-      from: `"QuickHealth" <${process.env.MAIL_USER}>`,
+      from: `"QuickHealth" <${process.env.BREVO_USER}>`,
       to,
       subject,
       html,
