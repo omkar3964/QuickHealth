@@ -35,7 +35,7 @@ export const paymentSuccess = (user, doctor, amount, code) => `
       <h3>Hi ${user.name},</h3>
       <p>Your payment of ₹${amount} for your appointment with  ${doctor.name} was successful.</p>
       <p><strong>Meeting Code:</strong> ${code}</p>
-      <p>Join Meeting: <a href="https://yourapp.com/meet/${code}">Click here</a></p>
+      <p>Join Meeting: <a href="https://quickhealth-frontend-hext.onrender.com/video/${code}">Click here</a></p>
       <br/>
       <p>Thanks for choosing QuickHealth!</p>
     </body>
@@ -46,7 +46,7 @@ export const appointmentBooked = (user, doctor, date, time, code) => `
   <h3>Hi ${user.name},</h3>
   <p>Your appointment with <strong> ${doctor.name}</strong> is confirmed.</p>
   <p><strong>Date:</strong> ${date}<br/><strong>Time:</strong> ${time}<br/><strong>Meeting Code:</strong> ${code}</p>
-  <p>Join: <a href="https://yourapp.com/meet/${code}">Click to Join Meeting</a></p>
+  <p>Join: <a href="https://quickhealth-frontend-hext.onrender.com/video/${code}">Click to Join Meeting</a></p>
   <br/><p>— QuickHealth Team</p>
 `;
 
@@ -75,7 +75,7 @@ export const appointmentCompleted = (user, doctor, date, time) => `
   <p>Your appointment with <strong> ${doctor.name}</strong> on <strong>${date}</strong> at <strong>${time}</strong> has been successfully completed.</p>
   <p>We hope your consultation went well.</p>
   <p>We'd love to hear your feedback about the service!</p>
-  <p><a href="https://yourapp.com/feedback/${doctor._id}" style="background:#4CAF50;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Leave Feedback</a></p>
+  <p><a href="https://quickhealth-frontend-hext.onrender.com/${doctor._id}" style="background:#4CAF50;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Leave Feedback</a></p>
   <br/>
   <p>Thanks for using QuickHealth 🙏</p>
 `;
@@ -89,7 +89,7 @@ export const doctorRegistered = (doctor, plainPassword) => `
     <li><strong>Temporary Password:</strong> ${plainPassword}</li>
   </ul>
   <p>You can log in and update your profile or change your password anytime.</p>
-  <p><a href="https://yourapp.com/doctor/login" style="background:#007bff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Login as Doctor</a></p>
+  <p><a href="https://quickhealth-admin-6fla.onrender.com/" style="background:#007bff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Login as Doctor</a></p>
   <br/>
   <p>Thanks & welcome aboard!<br/>— QuickHealth Team</p>
 `;
@@ -117,7 +117,7 @@ export const requestApproved = (doctor) => `
   <p>We are pleased to inform you that your request to join <strong>QuickHealth</strong> has been <span style="color:green;"><strong>approved</strong></span>.</p>
   <p>Our team has reviewed your application and verified your credentials.</p>
   <p>You can now log in to your doctor dashboard and start managing appointments and consultations.</p>
-  <p><a href="https://yourapp.com/doctor/login" style="background:#007bff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Login to Dashboard</a></p>
+  <p><a href="https://quickhealth-admin-6fla.onrender.com/" style="background:#007bff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Login to Dashboard</a></p>
   <br/>
   <p>Thank you for joining QuickHealth!<br/>— Team QuickHealth</p>
 `;
@@ -153,7 +153,7 @@ export const userRegistered = (user) => `
     <li>Get timely reminders and medical updates</li>
   </ul>
   <p>You can now log in and explore all our features designed to make your healthcare experience smooth and accessible.</p>
-  <p><a href="https://yourapp.com/login" style="background:#1e90ff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Login to QuickHealth</a></p>
+  <p><a href="https://quickhealth-frontend-hext.onrender.com/" style="background:#1e90ff;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Login to QuickHealth</a></p>
   <br/>
   <p>We’re excited to have you on board!<br/>— QuickHealth Team</p>
 `;

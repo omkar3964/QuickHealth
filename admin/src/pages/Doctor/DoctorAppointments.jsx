@@ -30,7 +30,7 @@ const DoctorAppointments = () => {
           <p>Action</p>
         </div>
         {
-          appointments.reverse().map((item, index) => {
+          [...appointments].reverse().map((item, index) => {
             const isActive = !item.cancelled && !item.isCompleted;
 
             return (
