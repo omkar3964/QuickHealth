@@ -6,6 +6,9 @@ import AddIcon from '@mui/icons-material/Add';
 import { AppContext } from '../context/AppContext';
 import * as pdfjsLib from 'pdfjs-dist';
 import Tesseract from 'tesseract.js';
+import { GlobalWorkerOptions } from "pdfjs-dist";
+
+GlobalWorkerOptions.workerSrc = new URL(  "pdfjs-dist/build/pdf.worker.min.mjs",  import.meta.url).toString();
 
 const ChatPanel = ({ onClose }) => {
   const { openAPIKey } = useContext(AppContext);
@@ -68,10 +71,11 @@ const ChatPanel = ({ onClose }) => {
     setLoading(true);
 
     try {
+      console.log("FINAL KEY CHECK:", openAPIKey);
       const response = await axios.post(
         "https://openrouter.ai/api/v1/chat/completions",
         {
-          model: "mistralai/mistral-7b-instruct",
+          model: "meta-llama/llama-3.1-8b-instruct",
           messages: [
             { role: "system", content: "You are a knowledgeable medical assistant. Provide helpful, respectful, and accurate medical information, but never give a diagnosis or treatment recommendation. Always advise the user to consult a licensed doctor." },
             ...newMessages.map((msg) => ({
@@ -110,7 +114,7 @@ const ChatPanel = ({ onClose }) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    setMessages((prev) => [...prev, { text: `📎 Uploaded: ${file.name}`, sender: "user" }]);
+    setMessages((prev) => [...prev, { text: `Uploaded: ${file.name}`, sender: "user" }]);
     setLoading(true);
 
     try {
@@ -127,7 +131,7 @@ const ChatPanel = ({ onClose }) => {
       const response = await axios.post(
         "https://openrouter.ai/api/v1/chat/completions",
         {
-          model: "mistralai/mistral-7b-instruct",
+          model: "meta-llama/llama-3.1-8b-instruct",
           messages: [
             { role: "system", content: "You are a knowledgeable medical assistant. Provide helpful, respectful, and accurate medical information, but never give a diagnosis or treatment recommendation. Always advise the user to consult a licensed doctor." },
             ...newMessages.map((msg) => ({
@@ -159,7 +163,7 @@ const ChatPanel = ({ onClose }) => {
 
       {/* Header */}
       <div className="p-4 border-b rounded-md flex justify-between items-center bg-primary text-white">
-        <h2 className="text-lg font-semibold">Support Chat</h2>
+        <h2 className="text-lg font-semibold">Supporting Chat</h2>
         <button onClick={onClose} className="text-xl font-bold">×</button>
       </div>
 
@@ -212,7 +216,10 @@ const ChatPanel = ({ onClose }) => {
         {/* Send Button */}
         <button
           type="button"
-          onClick={sendMessage}
+          onClick={() => {
+            console.log("BUTTON CLICKED");
+            sendMessage();
+          }}
           className="bg-primary text-white px-4 py-2 rounded disabled:opacity-50"
           disabled={loading}
         >

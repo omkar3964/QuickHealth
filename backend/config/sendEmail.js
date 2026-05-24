@@ -2,19 +2,19 @@ import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
-  port: 587, // Changed from 465
+  port: 2525, // Changed from 465
   secure: false, // Changed from true
   requireTLS: true, // Forces the STARTTLS encryption
   auth: {
     user: process.env.BREVO_USER,
     pass: process.env.BREVO_PASS,
   },
-  connectionTimeout: 20000,
-  greetingTimeout: 20000,
-  socketTimeout: 20000,
 });
 
 export const sendEmail = async (to, subject, html, attachments = []) => {
+  console.log(process.env.BREVO_USER);
+  console.log(process.env.BREVO_PASS);
+
   try {
     await transporter.sendMail({
       from: `"QuickHealth" <${process.env.MAIL_USER}>`,

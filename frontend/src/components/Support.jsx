@@ -26,13 +26,13 @@ const Support = () => {
   return (
     <>
       {/* Chat Panel */}
-      {open && <ChatPanel onClose={() => setOpen(false)} />}
+      {open && <ChatPanel onClose={() => { console.log("🔥 SUPPORT CLICKED"),
+                                                     setOpen(false)}} />}
 
       {/* Floating Button */}
       <div
-        className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-4 z-50 transition-opacity duration-500 ${
-          visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-6xl px-4 z-50 transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
       >
         <div className="flex justify-end pointer-events-auto">
           <img
